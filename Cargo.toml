@@ -1,0 +1,20 @@
+[package]
+name = "swim"
+version = "0.1.0"
+edition = "2021"
+authors = ["NotCreative21"]
+
+[dependencies]
+libc = "= 0.2.112"
+x11rb = { version = "0.9.0", features = ["xinerama", "cursor", "res"] }
+serde = "1.0.117"
+serde_derive = "1.0.117"
+# clap = { version = "3.0.10", features = ["derive"] }
+
+[[bin]]
+name = "swim"
+path = "src/swim.rs"
+
+[profile.release]
+lto = true
+opt-level = 'z'
